@@ -64,7 +64,7 @@ else if(req.body.queryResult.intent.displayName == "map") {
     let long= body.results[0].geometry.location.lng;
     console.log("**lat is **" + lat)
     console.log("long is "+ long)
-    responseObj={
+    letresponseObj={
       "payload": {
         "google": {
           "expectUserResponse": true,
@@ -98,6 +98,7 @@ else if(req.body.queryResult.intent.displayName == "map") {
         }
       }
     }
+    return res.json(responseObj);
   })
   .catch(err=>{
     console.log("erro from catch" + JSON.stringify(err))
