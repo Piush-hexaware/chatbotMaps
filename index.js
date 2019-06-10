@@ -86,7 +86,7 @@ else if(req.body.queryResult.intent.displayName == "map") {
                     {
                       "title": "Map",
                       "openUrlAction": {
-                        "url": `https://www.google.com/maps?q=${lat},${long}`
+                        "url": "https://www.google.com/maps?q="+lat+","+long
                       }
                     }
                   ],
@@ -98,7 +98,6 @@ else if(req.body.queryResult.intent.displayName == "map") {
         }
       }
     }
-    return res.json(responseObj);
   })
   .catch(err=>{
     console.log("erro from catch" + JSON.stringify(err))
