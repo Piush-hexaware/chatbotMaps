@@ -34,7 +34,10 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
       }
     }
   }
+  
 }
+console.log("response data " + JSON.stringify(responseObj));
+return res.json(responseObj);
 } else if (req.body.queryResult.intent.displayName == "permission") {
   console.log("inside permission"+ JSON.stringify(req.body))
   responseObj = {
@@ -53,6 +56,8 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
       }
     }
   }
+  console.log("response data " + JSON.stringify(responseObj));
+return res.json(responseObj);
 }
 else if(req.body.queryResult.intent.displayName == "map") {
   console.log("**inside map**" + JSON.stringify(req.body))
@@ -86,7 +91,7 @@ else if(req.body.queryResult.intent.displayName == "map") {
                     {
                       "title": "Map",
                       "openUrlAction": {
-                        "url": `https://www.google.com/maps?q=${lat},${long}`
+                        "url": "https://www.google.com/maps?q="+req.body.queryResult.parameters.address
                       }
                     }
                   ],
@@ -98,15 +103,14 @@ else if(req.body.queryResult.intent.displayName == "map") {
         }
       }
     }
-    return res.json(responseObj);
+    console.log("response data " + JSON.stringify(responseObj));
+return res.json(responseObj);
   })
   .catch(err=>{
     console.log("erro from catch" + JSON.stringify(err))
   })
+  
 }
-
-console.log("response data " + JSON.stringify(responseObj));
-return res.json(responseObj);
 });
 
 
