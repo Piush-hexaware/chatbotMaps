@@ -86,7 +86,7 @@ else if(req.body.queryResult.intent.displayName == "map") {
                     {
                       "title": "Map",
                       "openUrlAction": {
-                        "url": `https://www.google.com/maps/place/${lat},${long}`
+                        "url": `https://www.google.com/maps?q=${lat},${long}`
                       }
                     }
                   ],
