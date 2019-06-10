@@ -37,6 +37,22 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
 }
 } else if (req.body.queryResult.intent.displayName == "permission") {
   console.log("inside permission"+ JSON.stringify(req.body))
+  responseObj = {
+    "payload": {
+      "google": {
+        "expectUserResponse": true,
+        "richResponse": {
+          "items": [
+            {
+              "simpleResponse": {
+                "textToSpeech": "Thank You! How can i help you ?"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
 }
 
 console.log("response data " + JSON.stringify(responseObj));
