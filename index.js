@@ -64,7 +64,7 @@ else if(req.body.queryResult.intent.displayName == "map") {
     let long= body.results[0].geometry.location.lng;
     console.log("**lat is **" + lat)
     console.log("long is "+ long)
-    letresponseObj={
+    responseObj={
       "payload": {
         "google": {
           "expectUserResponse": true,
