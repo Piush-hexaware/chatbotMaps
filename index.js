@@ -63,7 +63,7 @@ else if(req.body.queryResult.intent.displayName == "map") {
     let lat= body.results[0].geometry.location.lat;
     let long= body.results[0].geometry.location.lng;
     console.log("**lat is **" + lat)
-    console.lgo("long is "+ long)
+    console.log("long is "+ long)
     responseObj={
       "payload": {
         "google": {
