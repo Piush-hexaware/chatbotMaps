@@ -57,6 +57,7 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
 else if(req.body.queryResult.intent.displayName == "map"){
   console.log("**inside map**" + JSON.stringify(req.body))
   console.log("%%url%%"+`https://maps.googleapis.com/maps/api/staticmap?center=${req.body.queryResult.parameters.address}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaSyAWsvXenHXLG_RnVuzls5ZSWVu4InJYYn0`)
+  let address = req.body.queryResult.parameters.address.split(" ").join("+")
   responseObj={
     "payload": {
       "google": {
@@ -72,7 +73,7 @@ else if(req.body.queryResult.intent.displayName == "map"){
               "basicCard": {
                 "title": `${req.body.queryResult.parameters.address}`,
                 "image": {
-                  "url": `https://maps.googleapis.com/maps/api/staticmap?center=${req.body.queryResult.parameters.address}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaSyAWsvXenHXLG_RnVuzls5ZSWVu4InJYYn0`,
+                  "url": `https://maps.googleapis.com/maps/api/staticmap?center=${address}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaSyAWsvXenHXLG_RnVuzls5ZSWVu4InJYYn0`,
                   "accessibilityText": "Google Map"
                 },
                 "buttons": [
