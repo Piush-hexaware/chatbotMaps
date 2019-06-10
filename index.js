@@ -91,11 +91,7 @@ else if(req.body.queryResult.intent.displayName == "map") {
                     {
                       "title": "Map",
                       "openUrlAction": {
-<<<<<<< HEAD
                         "url": "https://www.google.com/maps?q="+req.body.queryResult.parameters.address
-=======
-                        "url": "https://www.google.com/maps?q="+lat+","+long
->>>>>>> 30be009653039bcd7c1c67b7d6ca17ffbcb6ee89
                       }
                     }
                   ],
