@@ -38,6 +38,28 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
 }
 console.log("response data " + JSON.stringify(responseObj));
 return res.json(responseObj);
+} else if(req.body.queryResult.intent.displayName == "logout"){
+  console.log("inside log out intent")
+  let abc={
+    "payload": {
+      "google": {
+        "expectUserResponse": true,
+        "richResponse": {
+          "items": [
+            {
+              "simpleResponse": {
+                "textToSpeech": "Thank You! How can i help you ?"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+  console.log("response is "+ JSON.stringify(res))
+  console.log("response"+ JSON.stringify(res.status))
+  return res.status(401);
+  
 } else if (req.body.queryResult.intent.displayName == "permission") {
   console.log("inside permission"+ JSON.stringify(req.body))
   responseObj = {
