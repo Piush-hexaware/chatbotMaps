@@ -56,8 +56,8 @@ return res.json(responseObj);
       }
     }
   }
-  console.log("response is "+ JSON.stringify(res))
-  console.log("response"+ JSON.stringify(res.status))
+  // console.log("response is "+ JSON.stringify(res))
+  // console.log("response"+ JSON.stringify(res.status))
   return res.status(401);
   
 } else if (req.body.queryResult.intent.displayName == "permission") {
