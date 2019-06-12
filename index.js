@@ -41,9 +41,11 @@ restService.post("/token",function(req, res){
       tokensBody = JSON.parse(body);
       console.log("token body"+tokensBody)															
     }else{
-      tokensBody = JSON.parse(JSON.stringify(body))
-      console.log("token body 1"+JSON.stringify(body))
+      tokensBody = JSON.stringify(body)
+      console.log("token body 1"+tokensBody)
     }
+    res.status(response.statusCode);
+    res.send(tokensBody).end();
   })
 	// try{
 	// 	logger.consoleLog.info('body in /token');
