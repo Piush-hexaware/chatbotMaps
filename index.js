@@ -26,6 +26,25 @@ restService.get('/oauth/authorize',function(req, res){
 
 restService.post("/token",function(req, res){
   console.log("token hitting "+ JSON.stringify(req.body))
+  let tokensBody;
+  let tokenUrlParams =  {
+    client_id:req.body.client_id,
+    grant_type:req.body.grant_type,
+    redirect_uri:req.body.redirect_uri,
+    code:req.body.code,
+    client_secret:encodeURIComponent(config.client_secret)
+  };
+  console.log("token parem"+JSON.stringify(tokenUrlParams))
+  request.post(config.tokenEndpoint,{body:tokenUrlParams, json:true},function(error,response,body){
+    console.log('parent token status code '+response.statusCode);
+    if(typeof(body)=='string'){
+      tokensBody = JSON.parse(body);
+      console.log("token body"+tokensBody)															
+    }else{
+      tokensBody = JSON.parse(JSON.stringify(body))
+      console.log("token body 1"+tokensBody)
+    }
+  })
 	// try{
 	// 	logger.consoleLog.info('body in /token');
 	// 	logger.consoleLog.info(req.body);
