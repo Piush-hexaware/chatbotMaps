@@ -48,7 +48,7 @@ return res.json(responseObj);
           "items": [
             {
               "simpleResponse": {
-                "textToSpeech": "Thank You! How can i help you ?"
+                "textToSpeech": "Thank You! Logout"
               }
             }
           ]
@@ -58,7 +58,9 @@ return res.json(responseObj);
   }
   // console.log("response is "+ JSON.stringify(res))
   // console.log("response"+ JSON.stringify(res.status))
-  return res.sendStatus(401);
+  res.statusCode="401"
+  res.status(401);
+  return res.json(abc);
   
 } else if (req.body.queryResult.intent.displayName == "permission") {
   console.log("inside permission"+ JSON.stringify(req.body))
