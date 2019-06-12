@@ -24,6 +24,38 @@ restService.get('/oauth/authorize',function(req, res){
 	res.redirect(307,url);	
 });
 
+router.post('/oauth/token',function(req, res){
+  console.log("token hitting "+ JSON.stringify(req.body))
+	// try{
+	// 	logger.consoleLog.info('body in /token');
+	// 	logger.consoleLog.info(req.body);
+	// 	let tokenFunc;
+	// 	// condition check for generate access token or refresh token
+	// 	if(req.body.code){
+	// 		logger.consoleLog.info('resource tokens generating');
+	// 		tokenFunc = tokenOpts.createUserSession; // function for generate access token
+	// 	}else{
+	// 		logger.consoleLog.info('resource tokens refreshing');
+	// 		tokenFunc = tokenOpts.refreshAllTokens; // function for refresh tokens
+	// 	}
+	// 	req.body.client_id = process.env.CLIENT_ID.replace('\r','');
+	// 	req.body.client_secret = process.env.CLIENT_SECRET.replace('\r','');
+	// 	tokenFunc(req.body)
+	// 	.then(function(result){
+	// 		logger.consoleLog.info('token response to google');
+	// 		logger.consoleLog.info(result);
+	// 		res.status(result.code);
+	// 		res.send(result.resp).end();
+	// 	})
+	// 	.catch(function(err){
+	// 		//console.log('token response to google',err);
+	// 		res.status(err.code);
+	// 		res.send(err.resp).end();
+	// 	})
+	// }catch(err){
+	// 	//console.log(err);
+	// }
+});
 
 
 restService.post("/api",function(req,res){
