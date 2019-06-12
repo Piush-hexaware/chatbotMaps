@@ -24,7 +24,7 @@ restService.get('/oauth/authorize',function(req, res){
 	res.redirect(307,url);	
 });
 
-router.post('/oauth/token',function(req, res){
+restService.post('/oauth/token',function(req, res){
   console.log("token hitting "+ JSON.stringify(req.body))
 	// try{
 	// 	logger.consoleLog.info('body in /token');
