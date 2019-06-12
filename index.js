@@ -58,7 +58,7 @@ return res.json(responseObj);
   }
   // console.log("response is "+ JSON.stringify(res))
   // console.log("response"+ JSON.stringify(res.status))
-  return res.status(401);
+  return res.sendStatus(401);
   
 } else if (req.body.queryResult.intent.displayName == "permission") {
   console.log("inside permission"+ JSON.stringify(req.body))
