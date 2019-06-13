@@ -19,7 +19,7 @@ restService.use(bodyParser.json());
 
 restService.get('/oauth/authorize',function(req, res){
   console.log("hitting authorize"+JSON.stringify(req.query))
-	let url = `${config.authorizeEndpoint}?client_id=${config.client_id}&response_type=code&redirect_uri=${encodeURIComponent(req.query.redirect_uri)}&prompt=consent&scope=${req.query.scope}&state=${req.query.state}&audience=https://dev-pv99xlrf.auth0.com/api/v2/`;
+	let url = `${config.authorizeEndpoint}?client_id=${config.client_id}&response_type=code&redirect_uri=${encodeURIComponent(req.query.redirect_uri)}&prompt=consent&scope=${req.query.scope}&state=${req.query.state}&audience=https://www.abc.com/xyz`;
 	console.log(url);
 	res.redirect(307,url);	
 });
@@ -43,6 +43,13 @@ restService.post("/token",function(req, res){
     }else{
       tokensBody = JSON.stringify(body)
       console.log("token body 1"+tokensBody)
+      generateToken(tokensBody.refresh_token)
+      .then(body=>{
+        console.log("body after refresh token"+JSON.stringify(body))
+      })
+      .catch(err=>{
+        console.log("error"+err)
+      })
     }
     res.status(response.statusCode);
     res.send(tokensBody).end();
@@ -77,6 +84,30 @@ restService.post("/token",function(req, res){
 	// 	//console.log(err);
 	// }
 });
+
+
+
+function generateToken(refresh_token){
+  return new Promise(function(resolve, reject){
+    let tokenUrlParams =  {
+      client_id:req.body.client_id,
+      grant_type:"refresh_token",					
+      "refresh_token":refresh_token,
+      client_secret:encodeURIComponent(config.client_secret),
+      audience:encodeURIComponent("https://dev-pv99xlrf.auth0.com/api/v2/"),
+      scope:encodeURIComponent("piyush")				
+    };
+    //let tokenUrlParams =  `client_id=${process.env.CLIENT_ID.replace('\r','')}&grant_type=refresh_token&refresh_token=${refresh_token}&client_secret=${encodeURIComponent(process.env.CLIENT_SECRET.replace('\r',''))}&audience=${encodeURIComponent(config.resourceScope[scope])}`;
+    console.log(tokenUrlParams);
+    //console.log(config.tokenEndpoint)
+    request.post(config.tokenEndpoint,{body:tokenUrlParams,json:true},function(error,response,body){
+      console.log("body of token"+JSON.stringify(body));
+      if(error){
+        reject(error);
+      }
+    })
+  })
+}
 
 
 restService.post("/api",function(req,res){
