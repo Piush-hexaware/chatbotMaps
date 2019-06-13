@@ -12,6 +12,8 @@
 	"reloginDuration":10,
     "scope":"openid profile email offline_access",
     "client_id":"YJo82Kwe9DnJ5tN4B8oofxv5isfghMdr",
-    "client_secret":"2TZyIOnl9AFF0HpJru0SpaZXbviUz3ERuwb6Rgvvzndt8SzQIGLnkXVaGdZYkEY7"
+    "client_secret":"2TZyIOnl9AFF0HpJru0SpaZXbviUz3ERuwb6Rgvvzndt8SzQIGLnkXVaGdZYkEY7",
+    "audience":"Resume"
+    
     
 }

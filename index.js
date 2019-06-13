@@ -19,7 +19,7 @@ restService.use(bodyParser.json());
 
 restService.get('/oauth/authorize',function(req, res){
   console.log("hitting authorize"+JSON.stringify(req.query))
-	let url = `${config.authorizeEndpoint}?client_id=${config.client_id}&response_type=code&redirect_uri=${encodeURIComponent(req.query.redirect_uri)}&prompt=consent&scope=${req.query.scope}&state=${req.query.state}`;
+	let url = `${config.authorizeEndpoint}?client_id=${config.client_id}&response_type=code&redirect_uri=${encodeURIComponent(req.query.redirect_uri)}&prompt=consent&scope=${req.query.scope}&state=${req.query.state}&audience=${config.audience}`;
 	console.log(url);
 	res.redirect(307,url);	
 });
