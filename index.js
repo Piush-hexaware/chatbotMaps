@@ -156,23 +156,23 @@ return res.json({"fulfillmentText": `Perfect I've got you down for at ,see you l
     }
   }
 
-  "fulfillmentMessages": 
-  [
-    {"text": {
-        "text": [
-           "I am sorry you feel this way, let me transfer you to a real      person!"
-                ]
-    }},
-    { "platform": "TELEPHONY",
-      "telephonySynthesizeSpeech": {
-        "text": "I am sorry you feel this way, let me transfer you to a   real person!"}
-    },
-    {
-      "platform": "TELEPHONY",
-      "telephonyTransferCall": {
-        "phoneNumber": "<<ADD_THE_PHONE_NUMBER_HERE>>"
-      }
-    },]});
+  // "fulfillmentMessages": 
+  // [
+  //   {"text": {
+  //       "text": [
+  //          "I am sorry you feel this way, let me transfer you to a real      person!"
+  //               ]
+  //   }},
+  //   { "platform": "TELEPHONY",
+  //     "telephonySynthesizeSpeech": {
+  //       "text": "I am sorry you feel this way, let me transfer you to a   real person!"}
+  //   },
+  //   {
+  //     "platform": "TELEPHONY",
+  //     "telephonyTransferCall": {
+  //       "phoneNumber": "<<ADD_THE_PHONE_NUMBER_HERE>>"
+  //     }
+  //   },]});
 
 
 
