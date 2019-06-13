@@ -138,6 +138,7 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
 console.log("response data " + JSON.stringify(responseObj));
 return res.json({"fulfillmentText": `Hi,I am Smart COCO. SO,WHAT CAN I DO FOR YOU TODAY.` });
 }else if(req.body.queryResult.intent.displayName == "createIncident"){
+  console.log("incident data" + JSON.stringify(req.body));
 
   return res.json({"fulfillmentText": `your incident has been raised successfully. Incident i d INC75652` });
 } else if(req.body.queryResult.intent.displayName == "logout"){
