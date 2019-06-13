@@ -43,7 +43,7 @@ restService.post("/token",function(req, res){
     }else{
       tokensBody = JSON.stringify(body)
       console.log("token body 1"+tokensBody)
-      generateToken(tokensBody.refresh_token)
+      generateToken(req,tokensBody.refresh_token)
       .then(body=>{
         console.log("body after refresh token"+JSON.stringify(body))
       })
@@ -87,7 +87,7 @@ restService.post("/token",function(req, res){
 
 
 
-function generateToken(refresh_token){
+function generateToken(req,refresh_token){
   return new Promise(function(resolve, reject){
     let tokenUrlParams =  {
       client_id:req.body.client_id,
@@ -105,6 +105,7 @@ function generateToken(refresh_token){
       if(error){
         reject(error);
       }
+	    resolve(body);
     })
   })
 }
