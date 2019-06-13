@@ -10,7 +10,7 @@
 	"state":12345,		
 	"connection":"OegEsBotNew",
 	"reloginDuration":10,
-    "scope":"openid profile email offline_access",
+    "scope":"openid profile email offline_access piyush",
     "client_id":"YJo82Kwe9DnJ5tN4B8oofxv5isfghMdr",
     "client_secret":"2TZyIOnl9AFF0HpJru0SpaZXbviUz3ERuwb6Rgvvzndt8SzQIGLnkXVaGdZYkEY7",
     "audience":"Resume"
