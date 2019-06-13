@@ -136,7 +136,7 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
   
 }
 console.log("response data " + JSON.stringify(responseObj));
-return res.json(responseObj);
+return res.json({"fulfillmentText": `Perfect I've got you down for at ,see you later!` });
 } else if(req.body.queryResult.intent.displayName == "logout"){
   console.log("inside log out intent")
   let abc={
@@ -155,6 +155,31 @@ return res.json(responseObj);
       }
     }
   }
+
+  "fulfillmentMessages": 
+  [
+    {"text": {
+        "text": [
+           "I am sorry you feel this way, let me transfer you to a real      person!"
+                ]
+    }},
+    { "platform": "TELEPHONY",
+      "telephonySynthesizeSpeech": {
+        "text": "I am sorry you feel this way, let me transfer you to a   real person!"}
+    },
+    {
+      "platform": "TELEPHONY",
+      "telephonyTransferCall": {
+        "phoneNumber": "<<ADD_THE_PHONE_NUMBER_HERE>>"
+      }
+    },]});
+
+
+
+
+
+
+
   // console.log("response is "+ JSON.stringify(res))
   // console.log("response"+ JSON.stringify(res.status))
   res.statusCode="401"
