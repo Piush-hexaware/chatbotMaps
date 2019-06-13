@@ -139,7 +139,7 @@ console.log("response data " + JSON.stringify(responseObj));
 return res.json({"fulfillmentText": `Hi,I am Smart COCO. SO,WHAT CAN I DO FOR YOU TODAY.` });
 }else if(req.body.queryResult.intent.displayName == "createIncident"){
 
-  return res.json({"fulfillmentText": `your incident has been raised successfully. Incident id INC75652` });
+  return res.json({"fulfillmentText": `your incident has been raised successfully. Incident i d INC75652` });
 } else if(req.body.queryResult.intent.displayName == "logout"){
   console.log("inside log out intent")
   let abc={
