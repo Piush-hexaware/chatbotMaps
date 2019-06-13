@@ -43,6 +43,8 @@ restService.post("/token",function(req, res){
     }else{
       tokensBody = JSON.stringify(body)
       console.log("token body 1"+tokensBody)
+	       console.log("token body 1111"+tokensBody.refresh_token)
+console.log("token body 1333333333111"+body.refresh_token)
       generateToken(req,tokensBody.refresh_token)
       .then(body=>{
         console.log("body after refresh token"+JSON.stringify(body))
