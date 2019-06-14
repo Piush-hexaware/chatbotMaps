@@ -149,12 +149,12 @@ return res.json({"fulfillmentText": `Hi,I am Smart COCO. SO,WHAT CAN I DO FOR YO
       }},
       { "platform": "TELEPHONY",
         "telephonySynthesizeSpeech": {
-          "text": "I am sorry you feel this way, let me transfer you to a   real person!"}
+          "text": "hi i am smart coco"}
       },
       {
         "platform": "TELEPHONY",
         "telephonyTransferCall": {
-          "phoneNumber": "41441"
+          "phoneNumber": "+917062799435"
         }
       },]});
 } else if(req.body.queryResult.intent.displayName == "logout"){
