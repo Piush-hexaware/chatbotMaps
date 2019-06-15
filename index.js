@@ -140,7 +140,7 @@ return res.json({
     [
       {"text": {
           "text": [
-             "I am sorry you feel this way, let me transfer you to a real      person!"
+             "I am sorry you feel this way, let me transfer you to a real      person!","I am sorry you feel this way, let me transfer you to a real      person!"
                   ]
       }}
       ]
