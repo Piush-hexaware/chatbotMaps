@@ -135,7 +135,16 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
   }
   
 }
-return res.json({"fulfillmentText": `Hi,I am Smart COCO. SO,WHAT CAN I DO FOR YOU TODAY.` });
+return res.json({
+    "fulfillmentMessages": 
+    [
+      {"text": {
+          "text": [
+             "I am sorry you feel this way, let me transfer you to a real      person!"
+                  ]
+      }}
+      ]
+});
 }else if(req.body.queryResult.intent.displayName == "createIncident"){
   console.log("incident data" + JSON.stringify(req.body));
 
