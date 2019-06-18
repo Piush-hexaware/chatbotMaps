@@ -136,39 +136,8 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
   
 }
 
-return res.json({
-    "fulfillmentMessages": 
-    [
-      {"text": {
-          "text": [
-             "Hello! 👨‍🍳",
-  "Welcome to Zzungry. Order and eat Great food.",
-                  ]
-      }}
-      ]
-});
-}else if(req.body.queryResult.intent.displayName == "createIncident"){
-  console.log("incident data" + JSON.stringify(req.body));
-
-  return res.json({
-    "fulfillmentMessages": 
-    [
-      {"text": {
-          "text": [
-             "I am sorry you feel this way, let me transfer you to a real      person!"
-                  ]
-      }},
-      { "platform": "TELEPHONY",
-        "telephonySynthesizeSpeech": {
-          "text": "hi i am smart coco"}
-      },
-      {
-        "platform": "TELEPHONY",
-        "telephonyTransferCall": {
-          "phoneNumber": "+917062799435"
-        }
-      },]});
-} else if(req.body.queryResult.intent.displayName == "logout"){
+return res.json(responseObj);
+}else if(req.body.queryResult.intent.displayName == "logout"){
   console.log("inside log out intent")
   let abc={
     "payload": {
