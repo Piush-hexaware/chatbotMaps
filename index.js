@@ -140,21 +140,7 @@ return res.json(responseObj);
 }else if(req.body.queryResult.intent.displayName == "logout"){
   console.log("inside log out intent")
   let abc={
-    "payload": {
-      "google": {
-        "expectUserResponse": true,
-        "richResponse": {
-          "items": [
-            {
-              "simpleResponse": {
-                "textToSpeech": "Thank You! Logout"
-              }
-            }
-          ]
-        }
-      }
-    }
-  }
+  "fulfillmentText": "This is a text response"}
 
   // "fulfillmentMessages": 
   // [
