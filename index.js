@@ -142,12 +142,12 @@ return res.json(responseObj);
   let abc={
   "payload": {
     "google": {
-      "expectUserResponse": true,
+      "expectUserResponse": false,
       "richResponse": {
         "items": [
           {
             "simpleResponse": {
-              "textToSpeech": "this is a simple response"
+              "textToSpeech": "Goodbye!"
             }
           }
         ]
