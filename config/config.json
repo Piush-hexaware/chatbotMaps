@@ -2,7 +2,7 @@
 	"authorizeEndpoint":"https://dev-pv99xlrf.auth0.com/authorize",	
 	"tokenEndpoint":"https://dev-pv99xlrf.auth0.com/oauth/token",	
 	"redirect_uri":"https://oauth-redirect.googleusercontent.com/r/locate-2dd42",		
-	"masterScope" : "OegEsBot",	
+	"masterScope" : "Local",	
 	"issuer":"https://dev-pv99xlrf.auth0.com/",
 	"userInfo":"https://dev-pv99xlrf.auth0.com/userinfo",
 	"grant_type":"authorization_code",
