@@ -118,22 +118,35 @@ if(!req.body) return res.sendStatus(400);
 res.setHeader('Content-Type','application/json');
 let responseObj= null;
 if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
-  responseObj={
-  "payload": {
+	{
+  let responseObj="payload": {
     "google": {
       "expectUserResponse": true,
-      "richResponse": {
-        "items": [
-          {
-            "simpleResponse": {
-              "textToSpeech": "Hi I am Piyush!"
-            }
-          }
-        ]
+      "systemIntent": {
+        "intent": "actions.intent.SIGN_IN",
+        "data": {
+          "@type": "type.googleapis.com/google.actions.v2.SignInValueSpec"
+        }
       }
     }
   }
 }
+//   responseObj={
+//   "payload": {
+//     "google": {
+//       "expectUserResponse": true,
+//       "richResponse": {
+//         "items": [
+//           {
+//             "simpleResponse": {
+//               "textToSpeech": "Hi I am Piyush!"
+//             }
+//           }
+//         ]
+//       }
+//     }
+//   }
+// }
 	//{"payload": {
 //     "google": {
 //       "expectUserResponse": true,
@@ -153,7 +166,7 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
   
 // }
 
-return res.json(responseObj);
+//return res.json(responseObj);
 }else if(req.body.queryResult.intent.displayName == "logout"){
   console.log("inside log out intent")
   let abc={
