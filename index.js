@@ -119,16 +119,18 @@ res.setHeader('Content-Type','application/json');
 let responseObj= null;
 if(req.body.result.metadata.intentName == "Default Welcome Intent"){
  
- return res.json({"payload": {
+ return res.json({
+  "payload": {
     "google": {
       "expectUserResponse": true,
       "systemIntent": {
         "intent": "actions.intent.PERMISSION",
         "data": {
           "@type": "type.googleapis.com/google.actions.v2.PermissionValueSpec",
-          "optContext": "I can send you alerts. Would you like that?",
+          "optContext": "To deliver your order",
           "permissions": [
             "NAME",
+            "DEVICE_PRECISE_LOCATION"
           ]
         }
       }
