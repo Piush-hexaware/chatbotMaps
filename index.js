@@ -118,7 +118,8 @@ if(!req.body) return res.sendStatus(400);
 res.setHeader('Content-Type','application/json');
 let responseObj= null;
 if(req.body.result.metadata.intentName == "Default Welcome Intent"){
-  let responseObj={"payload": {
+ 
+ return res.json({"payload": {
     "google": {
       "expectUserResponse": true,
       "systemIntent": {
@@ -128,14 +129,12 @@ if(req.body.result.metadata.intentName == "Default Welcome Intent"){
           "optContext": "I can send you alerts. Would you like that?",
           "permissions": [
             "NAME",
-            "DEVICE_PRECISE_LOCATION",
           ]
         }
       }
     }
   }
-		  }
-		   return res.json(responseObj);
+});
 }else if(req.body.queryResult.intent.displayName == "logout"){
   console.log("inside log out intent")
   let abc={
