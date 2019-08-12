@@ -134,6 +134,7 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
       }
     }
   }
+		  }
 		   return res.json(responseObj);
 }else if(req.body.queryResult.intent.displayName == "logout"){
   console.log("inside log out intent")
