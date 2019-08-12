@@ -117,7 +117,7 @@ console.log("received a post request"+ JSON.stringify(req.body));
 if(!req.body) return res.sendStatus(400);
 res.setHeader('Content-Type','application/json');
 let responseObj= null;
-if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
+if(req.body.result.metadata.intentName == "Default Welcome Intent"){
   let responseObj={"payload": {
     "google": {
       "expectUserResponse": true,
