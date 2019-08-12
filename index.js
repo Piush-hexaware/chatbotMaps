@@ -118,7 +118,11 @@ if(!req.body) return res.sendStatus(400);
 res.setHeader('Content-Type','application/json');
 let responseObj= null;
 if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
- 
+ req.body.queryResult.outputContexts.find(element=>{
+  if(element.name.indexOf("mycontext") != 1){
+  element.parameters.anyData="piyush"
+  }
+})
  return res.json({
   "payload": {
     "google": {
