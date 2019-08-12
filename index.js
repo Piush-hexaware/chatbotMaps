@@ -130,7 +130,7 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
           "optContext": "To deliver your order",
 	 "parameters": {
 	 "anyData":"piyush"
-	 }
+	 },
           "permissions": [
             "NAME",
             "DEVICE_PRECISE_LOCATION"
