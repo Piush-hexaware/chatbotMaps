@@ -122,14 +122,18 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
     "google": {
       "expectUserResponse": true,
       "systemIntent": {
-        "intent": "actions.intent.SIGN_IN",
+        "intent": "actions.intent.PERMISSION",
         "data": {
-          "@type": "type.googleapis.com/google.actions.v2.SignInValueSpec"
+          "@type": "type.googleapis.com/google.actions.v2.PermissionValueSpec",
+          "optContext": "I can send you alerts. Would you like that?",
+          "permissions": [
+            "NAME",
+            "DEVICE_PRECISE_LOCATION",
+          ]
         }
       }
     }
   }
-}
 //   responseObj={
 //   "payload": {
 //     "google": {
@@ -165,7 +169,7 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
   
 // }
 
-//return res.json(responseObj);
+return res.json(responseObj);
 }else if(req.body.queryResult.intent.displayName == "logout"){
   console.log("inside log out intent")
   let abc={
