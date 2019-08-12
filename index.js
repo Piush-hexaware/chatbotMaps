@@ -134,42 +134,7 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
       }
     }
   }
-//   responseObj={
-//   "payload": {
-//     "google": {
-//       "expectUserResponse": true,
-//       "richResponse": {
-//         "items": [
-//           {
-//             "simpleResponse": {
-//               "textToSpeech": "Hi I am Piyush!"
-//             }
-//           }
-//         ]
-//       }
-//     }
-//   }
-// }
-	//{"payload": {
-//     "google": {
-//       "expectUserResponse": true,
-//       "systemIntent": {
-//         "intent": "actions.intent.PERMISSION",
-//         "data": {
-//           "@type": "type.googleapis.com/google.actions.v2.PermissionValueSpec",
-//           "optContext": "I can send you alerts. Would you like that?",
-//           "permissions": [
-//             "NAME",
-//             "DEVICE_PRECISE_LOCATION",
-//           ]
-//         }
-//       }
-//     }
-//   }
-  
-// }
-
-return res.json(responseObj);
+		   return res.json(responseObj);
 }else if(req.body.queryResult.intent.displayName == "logout"){
   console.log("inside log out intent")
   let abc={
