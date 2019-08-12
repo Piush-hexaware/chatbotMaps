@@ -128,6 +128,9 @@ if(req.body.queryResult.intent.displayName == "Default Welcome Intent"){
         "data": {
           "@type": "type.googleapis.com/google.actions.v2.PermissionValueSpec",
           "optContext": "To deliver your order",
+	 "parameters": {
+	 "anyData":"piyush"
+	 }
           "permissions": [
             "NAME",
             "DEVICE_PRECISE_LOCATION"
