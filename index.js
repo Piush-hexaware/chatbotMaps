@@ -14,7 +14,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 
-restService.get("/file",function(req,res){
+restService.post("/file",function(req,res){
  res.sendFile(__dirname+"/data.xml")	
        
  }
